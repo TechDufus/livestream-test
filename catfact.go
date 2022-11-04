@@ -1,3 +1,4 @@
+// Package main does the thing
 package main
 
 import (
@@ -32,7 +33,7 @@ func writeHelloKitty(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "                  _|_  O    _    O  _|_")
 	fmt.Fprintln(w, "                  _|_      (_)      _|_")
 	fmt.Fprintln(w, "                   \\                 /")
-	fmt.Fprintln(w, "                   _\\_____________/_")
+	fmt.Fprintln(w, "                   _\\_______________/_")
 	fmt.Fprintln(w, "                  /  \\/  (___)  \\/  \\")
 	fmt.Fprintln(w, "                  \\__(  o     o  )__/")
 }
