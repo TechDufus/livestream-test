@@ -1,2 +1,4 @@
-# livestream-test
-Testing apps and their deployments on Flux.
+# Catfact
+=========
+
+This is just a dummy app to test k8s things probably.

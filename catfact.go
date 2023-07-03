@@ -10,6 +10,8 @@ import (
 	"net/http"
 )
 
+const AppVersion = "0.0.3-test"
+
 type catFact struct {
 	Fact   string `json:"fact"`
 	Length int    `json:"length"`
@@ -36,6 +38,7 @@ func writeHelloKitty(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "                   _\\_______________/_")
 	fmt.Fprintln(w, "                  /  \\/  (___)  \\/  \\")
 	fmt.Fprintln(w, "                  \\__(  o     o  )__/")
+	log.Printf("Endpoint Hit: %s", r.URL.Path)
 }
 
 // function to get catfact from api and unmarshall it from json to struct
@@ -72,7 +75,7 @@ func getCatFact() (catFact, error) {
 }
 
 func getVersion() string {
-	return "0.0.2"
+	return AppVersion
 }
 
 func homePage(w http.ResponseWriter, r *http.Request) {
@@ -92,7 +95,7 @@ func handleCatFact(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Catfact: %s", catfact.Fact)
 	fmt.Printf("Catfact: %s", catfact.Fact)
 	fmt.Fprintln(w, "")
-	fmt.Fprintf(w, " Length: %d", catfact.Length)
+	fmt.Fprintf(w, "Length: %d", catfact.Length)
 	fmt.Printf(" Length: %d", catfact.Length)
 	fmt.Fprintln(w, "")
 	fmt.Fprintf(w, "Version: %s", getVersion())
