@@ -18,5 +18,9 @@ if is_logged_in > /dev/null; then
 else
     # Login to Docker Hub
     echo "Logging in to Docker Hub... User: $DOCKERHUB_USER"
-    docker login --username $DOCKERHUB_USER
+    if [ -z "$DOCKERHUB_PAT_SECRET" ]; then
+      docker login --username $DOCKERHUB_USER
+    else
+      echo $DOCKERHUB_PAT_SECRET | docker login --username $DOCKERHUB_USER --password-stdin
+    fi
 fi
