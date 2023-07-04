@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Exit on error
-set -e
-
 # Get the current directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
