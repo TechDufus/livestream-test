@@ -1,7 +1,7 @@
 name: Docker Build
 on:
   push:
-    branches: ['*']
+    branches: ['*', '!main']
 
 jobs:
   lint:
